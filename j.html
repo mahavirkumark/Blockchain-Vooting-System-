@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vote Submission</title>
+	<link rel="stylesheet" href="styles.css">
+	<style>
+		/* Center the form */
+		.form-container {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 50%;
+			background-color: #f9f9f9;
+			padding: 20px;
+			border: 1px solid #ddd;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		
+		/* Style the options */
+		.option {
+			margin-bottom: 20px;
+			padding: 10px;
+			border: 1px solid #ddd;
+			border-radius: 10px;
+			cursor: pointer;
+		}
+		
+		.option:hover {
+			background-color: #f0f0f0;
+		}
+		
+        .option img {
+			width: 50px;
+			height: 50px;
+			margin-right: 10px;
+			border-radius: 50%;
+		
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar">
+     
+    
+        <div class="logo">Blockchain Vooting System</div>
+        
+        <ul class="nav-links">
+            <li><a href="#" class="nav-item" onclick="setActive(this)">Home</a></li>
+            <li><a href="#" class="nav-item" onclick="setActive(this)">Login</a></li>
+            <li><a href="#" class="nav-item" onclick="setActive(this)">Voting Rules</a></li>
+            <li><a href="voting.html" class="nav-item" onclick="setActive(this)">Election Dates</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" placeholder="Type here..." id="search-input">
+            <button onclick="searchFunction()">Search</button>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    </nav>
+	<div class="form-container">
+	
+        
+		<form action="m.html" " method="get" </form>
+			<h2>Cast Your Vote</h2>
+			<div class="option">
+				<img src="bjp.jpg" alt="BJP">
+				<input type="radio" name="party" value="bjp"> BJP
+			</div>
+			<div class="option">
+				<img src="CON.png" alt="Congress">
+				<input type="radio" name="party" value="congress"> Congress
+			</div>
+			<div class="option">
+				<img src="S.PNG" alt="Shiv Sena">
+				<input type="radio" name="party" value="shivsena"> Shiv Sena
+			</div>
+			<br>
+			<input type="submit" value="Submit">
+		</form>
+		
+		<div id="message" style="display: none;">Form is submitted!</div>
+        <script>
+			const form = document.getElementById('myForm');
+			form.addEventListener('submit', function(event) {
+				event.preventDefault();
+				document.getElementById("message").style.display = "block";
+				setTimeout(function() {
+					document.getElementById("message").style.display = "none";
+					form.submit();
+				}, 1000);
+			});
+		</script>
+	 
+</body>
+</html>
